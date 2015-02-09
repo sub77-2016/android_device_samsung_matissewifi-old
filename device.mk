@@ -15,7 +15,7 @@
 #
 
 # call the proprietary setup
-$(call inherit-product, vendor/samsung/ms013g/ms013g-vendor.mk)
+$(call inherit-product, vendor/samsung/matissewifi/matissewifi-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -26,7 +26,7 @@ PRODUCT_COPY_FILES += \
 
 #RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=ms013gDSRIL
+    ro.telephony.ril_class=matisseDSRIL
 
 # Default.prop overrides to get adb working at boot
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -36,11 +36,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Wifi
 PRODUCT_COPY_FILES += \
-    kernel/samsung/ms013g/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    kernel/samsung/ms013g/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    kernel/samsung/ms013g/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
-    kernel/samsung/ms013g/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    kernel/samsung/ms013g/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/WCNSS_qcom_wlan_nv.bin
+    kernel/samsung/matissewifi/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    kernel/samsung/matissewifi/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    kernel/samsung/matissewifi/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+    kernel/samsung/matissewifi/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    kernel/samsung/matissewifi/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/WCNSS_qcom_wlan_nv.bin
 
 # Inherit from msm8226-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)

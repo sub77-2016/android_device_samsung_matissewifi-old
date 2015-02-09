@@ -1,3 +1,3 @@
-android_device_samsung_ms013g
-=============================
+android_device_samsung_matissewifi
+==================================
 cm-12.0
