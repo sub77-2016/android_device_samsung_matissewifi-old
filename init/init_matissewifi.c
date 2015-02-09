@@ -66,7 +66,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /* matisse3g */
         property_set("ro.build.fingerprint", "samsung/matisse3gxx/matisse3g:4.4.2/KOT49H/G7102XXUBNG4:user/release-keys");
         property_set("ro.build.description", "matisse3gxx-user 4.4.2 KOT49H G7102XXUBNG4 release-keys");
-        property_set("ro.product.model", "SM-G7102");
+        property_set("ro.product.model", "SM-T531");
         property_set("ro.product.device", "matisse3g");
         property_set("persist.dsds.enabled", "true");
         property_set("persist.radio.multisim.config", "dsds");
@@ -79,7 +79,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.model", "SM-T530");
         property_set("ro.product.device", "matissewifi");
  
-
+}
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
     INFO("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);

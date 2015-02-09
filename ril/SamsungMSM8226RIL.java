@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * RIL customization for Galaxy S3 Neo Single-sim devices
+ * RIL customization for Samsung MSM8226 Single-sim devices
  *
  * {@hide}
  */
@@ -44,7 +44,13 @@ public class SamsungMSM8226RIL extends RIL {
     private static final int RIL_UNSOL_RESPONSE_HANDOVER = 11021;
 
     public SamsungMSM8226RIL(Context context, int networkMode, int cdmaSubscription) {
-        super(context, networkMode, cdmaSubscription);
+        super(context, networkMode, cdmaSubscription, null);
+        mQANElements = 6;
+    }
+
+    public SamsungMSM8226RIL(Context context, int preferredNetworkType,
+            int cdmaSubscription, Integer instanceId) {
+        super(context, preferredNetworkType, cdmaSubscription, instanceId);
         mQANElements = 6;
     }
 
@@ -293,3 +299,4 @@ public class SamsungMSM8226RIL extends RIL {
         send(rr);
     }
 }
+
