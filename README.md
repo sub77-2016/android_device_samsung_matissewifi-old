@@ -1,3 +1,3 @@
 android_device_samsung_matissewifi
 ==================================
-cm-12.0
+android-5.0
