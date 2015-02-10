@@ -8,5 +8,11 @@
 /modem          emmc            /dev/block/platform/msm_sdcc.1/by-name/apnhlos
 /mdm            emmc            /dev/block/platform/msm_sdcc.1/by-name/modem
 /preload        ext4            /dev/block/platform/msm_sdcc.1/by-name/hidden
+<<<<<<< HEAD
 /external_sd	vfat			/dev/block/mmcblk1p1	/dev/block/mmcblk1  flags=display="External SDcard";storage;wipeingui;removable
 /usb-otg		vfat			/dev/block/sda1			/dev/block/sda		flags=removable;storage;display="USB-OTG"
+=======
+#/sdcard         vfat            /dev/block/mmcblk0p26	/dev/block/mmcblk0  flags=display="Internal SDcard";storage
+/external_sd	vfat       /dev/block/mmcblk1p1   /dev/block/mmcblk1  flags=display="External SDcard";storage;wipeingui;removable
+/usb-otg    vfat        /dev/block/sda1    /dev/block/sda   flags=removable;storage;display=USB-OTG
+>>>>>>> origin/android-5.0

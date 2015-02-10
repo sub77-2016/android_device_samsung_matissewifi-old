@@ -19,6 +19,15 @@ LOCAL_PATH := device/samsung/matissewifi
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/matissewifi/matissewifi-vendor.mk)
 
+# Screen density
+#PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+#PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 800
+
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
