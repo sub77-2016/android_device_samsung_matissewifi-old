@@ -54,6 +54,8 @@ ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 persist.data.netmgrd.qos.enable=false
 persist.radio.add_power_save=1
 ro.use_data_netmgrd=false
+ro.radio.noril=yes
+ro.carrier=wifi-only
 
 # Recovery
 ro.cwm.forbid_format=/efs,/firmware,/firmware-modem,/persist,/boot
@@ -69,3 +71,4 @@ ro.qc.sdk.sensors.gestures=true
 # Wifi
 persist.sys.qc.sub.rdump.on=1
 persist.sys.ssr.restart_level=3
+wifi.interface=wlan0
