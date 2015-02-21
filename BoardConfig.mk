@@ -71,5 +71,17 @@ RECOVERY_SDCARD_ON_DATA := true
 HAVE_SELINUX := true
 TW_INCLUDE_L_CRYPTO := true
 
+# MultiROM config. MultiROM also uses parts of TWRP config
+MR_INPUT_TYPE := type_b
+MR_INIT_DEVICES := device/samsung/matissewifi/multirom/mr_init_devices.c
+MR_DPI := xhdpi
+MR_DPI_FONT := 340
+MR_FSTAB := device/samsung/matissewifi/multirom/twrp.fstab
+MR_KEXEC_MEM_MIN := 0x85000000
+MR_USE_MROM_FSTAB := true
+MR_DEVICE_HOOKS := device/samsung/matissewifi/multirom/mr_hooks.c
+MR_DEVICE_HOOKS_VER := 1
+
+
 # inherit from the proprietary version
 -include vendor/samsung/matissewifi/BoardConfigVendor.mk
