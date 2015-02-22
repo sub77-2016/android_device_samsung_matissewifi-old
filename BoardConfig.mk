@@ -23,7 +23,8 @@ TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi-2
-TARGET_KERNEL_CONFIG := msm8226-seckexec_defconfig
+TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
+#TARGET_KERNEL_CONFIG := msm8226-seckexec_defconfig
 #TARGET_KERNEL_CONFIG := msm8226-sectwrp_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
@@ -82,10 +83,12 @@ MR_DPI := hdpi
 MR_DPI_FONT := 160
 MR_FSTAB := device/samsung/matissewifi/multirom/twrp.fstab
 MR_KEXEC_MEM_MIN := 0x05000000
-MR_USE_MROM_FSTAB := true
-MR_DEVICE_HOOKS := device/samsung/matissewifi/multirom/mr_hooks.c
-MR_DEVICE_HOOKS_VER := 1
-
+#MR_USE_MROM_FSTAB := true
+#MR_DEVICE_HOOKS := device/samsung/matissewifi/multirom/mr_hooks.c
+#MR_DEVICE_HOOKS_VER := 1
+MR_KEXEC_DTB := true
+#MR_INFOS := device/motorola/falcon/mrom_infos
+MR_CONTINUOUS_FB_UPDATE := true
 
 # inherit from the proprietary version
 -include vendor/samsung/matissewifi/BoardConfigVendor.mk
