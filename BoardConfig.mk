@@ -24,6 +24,7 @@ TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi-2
 TARGET_KERNEL_CONFIG := msm8226-seckexec_defconfig
+#TARGET_KERNEL_CONFIG := msm8226-sectwrp_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg-cm12.mk
@@ -48,7 +49,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril/
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 #TWRP
 RECOVERY_VARIANT=twrp
@@ -71,13 +72,16 @@ RECOVERY_SDCARD_ON_DATA := true
 HAVE_SELINUX := true
 TW_INCLUDE_L_CRYPTO := true
 
+PRODUCT_COPY_FILES += \
+$(LOCAL_PATH)/multirom/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # MultiROM config. MultiROM also uses parts of TWRP config
 MR_INPUT_TYPE := type_b
 MR_INIT_DEVICES := device/samsung/matissewifi/multirom/mr_init_devices.c
-MR_DPI := xhdpi
-MR_DPI_FONT := 340
+MR_DPI := hdpi
+MR_DPI_FONT := 160
 MR_FSTAB := device/samsung/matissewifi/multirom/twrp.fstab
-MR_KEXEC_MEM_MIN := 0x85000000
+MR_KEXEC_MEM_MIN := 0x05000000
 MR_USE_MROM_FSTAB := true
 MR_DEVICE_HOOKS := device/samsung/matissewifi/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 1
