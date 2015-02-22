@@ -23,12 +23,12 @@ TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi-2
-TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
-#TARGET_KERNEL_CONFIG := msm8226-seckexec_defconfig
+#TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
+TARGET_KERNEL_CONFIG := msm8226-seckexec_defconfig
 #TARGET_KERNEL_CONFIG := msm8226-sectwrp_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
-BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg-cm12.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -71,7 +71,7 @@ TW_NO_USB_STORAGE := true
 #BOARD_HAS_NO_REAL_SDCARD := false
 RECOVERY_SDCARD_ON_DATA := true
 HAVE_SELINUX := true
-TW_INCLUDE_L_CRYPTO := true
+#TW_INCLUDE_L_CRYPTO := true
 
 PRODUCT_COPY_FILES += \
 $(LOCAL_PATH)/multirom/twrp.fstab:recovery/root/etc/twrp.fstab
