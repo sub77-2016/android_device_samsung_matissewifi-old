@@ -17,8 +17,8 @@
 
 def FullOTA_InstallEnd(info):
   info.script.Mount("/system")
-  info.script.AppendExtra('ifelse(is_substring("T535", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp -R /system/blobs/ms01lte/* /system/"));')
-  info.script.AppendExtra('ifelse(is_substring("T531", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp -R /system/blobs/ms013g/* /system/"));')
+  info.script.AppendExtra('ifelse(is_substring("T535", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp -R /system/blobs/matisselte/* /system/"));')
+  info.script.AppendExtra('ifelse(is_substring("T531", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp -R /system/blobs/matisse3g/* /system/"));')
   info.script.AppendExtra('set_metadata("/system/bin/ATFWD-daemon", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");')
   info.script.AppendExtra('set_metadata("/system/bin/ds_fmc_appd", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");')
   info.script.AppendExtra('set_metadata("/system/bin/qmuxd", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");')
