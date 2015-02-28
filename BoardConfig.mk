@@ -19,18 +19,15 @@
 LOCAL_PATH := device/samsung/matissewifi
 
 # Assert
-# TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
+TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
-#TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi-2
 TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
-#TARGET_KERNEL_CONFIG := msm8226-seckexec_defconfig
-#TARGET_KERNEL_CONFIG := msm8226-sectwrp_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matisse_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
-BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg-cm12.mk
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -52,7 +49,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril/
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 #TWRP
 RECOVERY_VARIANT=twrp
@@ -86,7 +83,7 @@ MR_KEXEC_MEM_MIN := 0x05000000
 #MR_DEVICE_HOOKS := device/samsung/matissewifi/multirom/mr_hooks.c
 #MR_DEVICE_HOOKS_VER := 1
 MR_KEXEC_DTB := true
-#MR_INFOS := device/motorola/falcon/mrom_infos
+#MR_INFOS := device/samsung/matissewifi/mrom_infos
 MR_CONTINUOUS_FB_UPDATE := true
 
 # inherit from the proprietary version
