@@ -25,9 +25,9 @@ TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
 TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
-
+#TARGET_KERNEL_CONFIG := cm_matissewifi_defconfig
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
-BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg-cm12.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -49,13 +49,13 @@ BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril/
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
 # Recovery
+#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 DEVICE_RESOLUTION := 1280x800
 
 
 #TWRP
-RECOVERY_VARIANT=twrp
-DEVICE_RESOLUTION := 1280x800
+#RECOVERY_VARIANT=twrp
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 #TW_BRIGHTNESS_PATH := /sys/class/backlight/lcd-backlight/brightness
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
