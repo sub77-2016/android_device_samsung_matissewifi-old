@@ -23,6 +23,7 @@ TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
+#TARGET_KERNEL_CONFIG := test_defconfig
 TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 #TARGET_KERNEL_CONFIG := cm_matissewifi_defconfig
@@ -57,7 +58,6 @@ DEVICE_RESOLUTION := 1280x800
 #TWRP
 #RECOVERY_VARIANT=twrp
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-#TW_BRIGHTNESS_PATH := /sys/class/backlight/lcd-backlight/brightness
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 126
 TW_IGNORE_MAJOR_AXIS_0 := true
