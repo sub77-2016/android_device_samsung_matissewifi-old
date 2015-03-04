@@ -54,8 +54,7 @@ ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 persist.data.netmgrd.qos.enable=false
 persist.radio.add_power_save=1
 ro.use_data_netmgrd=false
-#ro.radio.noril=yes
-#ro.carrier=wifi-only
+
 
 # Recovery
 ro.cwm.forbid_format=/efs,/firmware,/firmware-modem,/persist,/boot
