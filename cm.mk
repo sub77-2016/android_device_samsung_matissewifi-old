@@ -18,6 +18,9 @@ $(call inherit-product, vendor/cm/config/common_full.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/matissewifi/full_matissewifi.mk)
 
+
+#TARGET_BOOTANIMATION_SIZE := 480x320
+
 # Release name
 PRODUCT_RELEASE_NAME := SM-T530
 PRODUCT_NAME := cm_matissewifi
