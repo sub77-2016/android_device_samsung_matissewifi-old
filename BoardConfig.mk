@@ -23,6 +23,7 @@ TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
+#TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi-kexec
 #TARGET_KERNEL_CONFIG := test_defconfig
 TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
@@ -66,7 +67,7 @@ TW_NO_USB_STORAGE := true
 BOARD_HAS_NO_REAL_SDCARD := false
 RECOVERY_SDCARD_ON_DATA := true
 HAVE_SELINUX := true
-#TW_INCLUDE_L_CRYPTO := true
+TW_INCLUDE_L_CRYPTO := true
 
 # MultiROM config. MultiROM also uses parts of TWRP config
 MR_INPUT_TYPE := type_b
