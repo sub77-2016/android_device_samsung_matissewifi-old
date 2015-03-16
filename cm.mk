@@ -21,3 +21,4 @@ $(call inherit-product, device/samsung/matissewifi/full_matissewifi.mk)
 # Release name
 PRODUCT_RELEASE_NAME := SM-T530
 PRODUCT_NAME := cm_matissewifi
+
