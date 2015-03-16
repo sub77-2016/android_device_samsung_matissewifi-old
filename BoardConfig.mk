@@ -49,7 +49,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril/
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
 
 #TWRP
 RECOVERY_VARIANT=twrp
@@ -61,15 +61,11 @@ TW_MAX_BRIGHTNESS := 126
 TW_IGNORE_MAJOR_AXIS_0 := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_NO_USB_STORAGE := true
-#TW_NO_SCREEN_TIMEOUT := true
-#TW_NO_SCREEN_BLANK := true
-#TW_INTERNAL_STORAGE_PATH := "/data/media"
-#TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-#TW_EXTERNAL_STORAGE_PATH := "/sdcard"
-#TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-#BOARD_HAS_NO_REAL_SDCARD := false
+TW_NO_SCREEN_TIMEOUT := false
+TW_NO_SCREEN_BLANK := false
+BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
-#HAVE_SELINUX := true
+HAVE_SELINUX := true
 #TW_INCLUDE_L_CRYPTO := true
 
 # MultiROM config. MultiROM also uses parts of TWRP config
