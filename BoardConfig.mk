@@ -47,12 +47,13 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril/
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi/
 
 # Recovery
-#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 DEVICE_RESOLUTION := 1280x800
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+
 
 #TWRP
 #RECOVERY_VARIANT=twrp
@@ -80,6 +81,19 @@ TW_INCLUDE_L_CRYPTO := true
 #MR_KEXEC_DTB := true
 #MR_INFOS := device/samsung/matissewifi/mrom_infos
 #MR_CONTINUOUS_FB_UPDATE := true
+
+
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(TARGET_BUILD_VARIANT),user)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_ONLY := false
+    endif
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+
 
 # inherit from the proprietary version
 -include vendor/samsung/matissewifi/BoardConfigVendor.mk
