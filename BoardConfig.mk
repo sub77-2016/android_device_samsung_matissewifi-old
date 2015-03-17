@@ -21,6 +21,14 @@ LOCAL_PATH := device/samsung/matissewifi
 # Assert
 TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 
+# Compiler Optimization
+ARCH_ARM_HIGH_OPTIMIZATION := true
+ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true
+TARGET_USE_O3 := true
+# Optimisations used by Qualcomm
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
 TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
