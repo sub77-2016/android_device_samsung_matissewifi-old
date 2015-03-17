@@ -82,6 +82,8 @@ MR_KEXEC_DTB := true
 #MR_INFOS := device/samsung/matissewifi/mrom_infos
 MR_CONTINUOUS_FB_UPDATE := true
 
+# Skip building external/chromium_org
+PRODUCT_PREBUILT_WEBVIEWCHROMIUM := true
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
