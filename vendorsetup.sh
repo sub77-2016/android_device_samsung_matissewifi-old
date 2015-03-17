@@ -1,2 +1,4 @@
 add_lunch_combo cm_matissewifi-userdebug
+add_lunch_combo cm_matissewifi-user
+add_lunch_combo cm_matissewifi-eng
 
