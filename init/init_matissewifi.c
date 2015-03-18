@@ -59,9 +59,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "matissewifixx-user 4.4.2 KOT49H T530XXU1ANJ2 release-keys");
         property_set("ro.product.model", "SM-T530");
         property_set("ro.product.device", "matissewifi");
-        property_set("ro.radio.noril", "yes");
-        property_set("ro.carrier", "wifi-only");
-        property_set("keyguard.no_require_sim", "true");
     } else {
         property_set("ro.build.fingerprint", "samsung/matisse3gxx/matisse3g:4.4.2/KOT49H/T531XXU1ANJ4:user/release-keys");
         property_set("ro.build.description", "matisse3gxx-user 4.4.2 KOT49H T531XXU1ANJ4 release-keys");
