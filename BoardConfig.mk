@@ -51,16 +51,16 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 5555010560
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Radio
-BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril/
+BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi/
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 #TWRP
-RECOVERY_VARIANT=twrp
+#RECOVERY_VARIANT=twrp
 DEVICE_RESOLUTION := 1280x800
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 #TW_BRIGHTNESS_PATH := /sys/class/backlight/lcd-backlight/brightness
@@ -91,7 +91,7 @@ MR_KEXEC_DTB := true
 MR_CONTINUOUS_FB_UPDATE := true
 
 # Skip building external/chromium_org
-PRODUCT_PREBUILT_WEBVIEWCHROMIUM := true
+#PRODUCT_PREBUILT_WEBVIEWCHROMIUM := true
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
