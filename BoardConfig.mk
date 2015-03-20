@@ -29,7 +29,7 @@ TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-CROSS_COMPILE := /home/sub77/Android/toolchains/sabermod/SaberNaro-arm-eabi-4.9/bin/arm-eabi-
+CONFIG_CROSS_COMPILE3 := /home/sub77/Android/toolchains/sabermod/SaberNaro-arm-eabi-4.1/bin/arm-eabi-
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -51,12 +51,13 @@ BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril/
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi/
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
 DEVICE_RESOLUTION := 1280x800
 
-
-
 #TWRP
+TW_MATISSEWIFI := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_MAX_BRIGHTNESS := 126
 TW_IGNORE_MAJOR_AXIS_0 := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_NO_USB_STORAGE := true
@@ -86,7 +87,7 @@ TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
+  ifeq ($(TARGET_BUILD_VARIANT),user,userdebug)
     ifeq ($(WITH_DEXPREOPT),)
       WITH_DEXPREOPT := true
       WITH_DEXPREOPT_BOOT_IMG_ONLY := false
