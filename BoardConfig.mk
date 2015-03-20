@@ -65,7 +65,7 @@ TW_NO_USB_STORAGE := true
 BOARD_HAS_NO_REAL_SDCARD := false
 RECOVERY_SDCARD_ON_DATA := true
 HAVE_SELINUX := true
-#TW_INCLUDE_L_CRYPTO := true
+TW_INCLUDE_L_CRYPTO := true
 
 # MultiROM config. MultiROM also uses parts of TWRP config
 #MR_INPUT_TYPE := type_b
