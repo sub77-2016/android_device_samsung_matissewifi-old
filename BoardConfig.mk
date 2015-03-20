@@ -22,8 +22,8 @@ LOCAL_PATH := device/samsung/matissewifi
 TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 
 # Kernel
-#TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
-TARGET_KERNEL_CONFIG := msm8226-twrp_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
+#TARGET_KERNEL_CONFIG := msm8226-twrp_defconfig
 
 TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
@@ -52,7 +52,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi/
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 DEVICE_RESOLUTION := 1280x800
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+
 
 
 #TWRP
