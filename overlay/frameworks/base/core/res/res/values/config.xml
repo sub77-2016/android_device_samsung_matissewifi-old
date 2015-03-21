@@ -227,7 +227,7 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">65</integer>
-    <integer name="config_longPressOnHomeBehavior">2</integer>
+    <integer name="config_longPressOnHomeBehavior">16</integer>
 
     <!-- Boolean indicating if restoring network selection should be skipped -->
     <!-- The restoring is handled by modem if it is true-->
