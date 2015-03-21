@@ -13,11 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 LOCAL_PATH := device/samsung/matissewifi
 
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/matissewifi/matissewifi-vendor.mk)
+
+
+
+
+
+
+
+
 
 ## We are a tablet, not a phone
 PRODUCT_CHARACTERISTICS := tablet
