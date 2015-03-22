@@ -17,6 +17,7 @@
 
 def FullOTA_InstallEnd(info):
   info.script.Mount("/system")
+  info.script.AppendExtra('ifelse(is_substring("T530", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp -R /system/blobs/matissewifi/* /system/"));')
   info.script.AppendExtra('ifelse(is_substring("T535", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp -R /system/blobs/matisselte/* /system/"));')
   info.script.AppendExtra('ifelse(is_substring("T531", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp -R /system/blobs/matisse3g/* /system/"));')
   info.script.AppendExtra('set_metadata("/system/bin/ATFWD-daemon", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");')
