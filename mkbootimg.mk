@@ -58,8 +58,8 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE),raw)
 	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
 
-ifndef LZMA
-$(INSTALLED_RECOVERYIMAGELZMA_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
+ifndef LZMAX
+$(INSTALLED_RECOVERYIMAGEBKP_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
 		$(recovery_uncompressed_ramdisk) \
 		$(recovery_ramdisk) \
 		$(recovery_kernel)
