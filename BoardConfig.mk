@@ -51,12 +51,16 @@ BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril/
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
-#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
 DEVICE_RESOLUTION := 1280x800
+#LZMA := true
+#ifndef LZMA
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
+#else
+#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+#endif
 
 #TWRP
-#LZMA
+
 #RECOVERY_VARIANT := twrp
 #TW_MATISSEWIFI := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
