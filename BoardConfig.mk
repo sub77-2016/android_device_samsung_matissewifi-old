@@ -22,14 +22,13 @@ LOCAL_PATH := device/samsung/matissewifi
 TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 
 # Kernel
+#TARGET_PREBUILT_KERNEL := device/samsung/matissewifi/zImage
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
-#TARGET_KERNEL_CONFIG := msm8226-twrp_defconfig
-
-TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
+TARGET_KERNEL_CONFIG := msm8226-full_matissewifi_defconfig
+TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-CONFIG_CROSS_COMPILE3 := /home/sub77/Android/toolchains/sabermod/SaberNaro-arm-eabi-4.1/bin/arm-eabi-
+#CONFIG_CROSS_COMPILE3 := /home/sub77/Android/toolchains/sabermod/SaberNaro-arm-eabi-4.1/bin/arm-eabi-
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -37,7 +36,8 @@ TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matissewifi.c
 TARGET_UNIFIED_DEVICE := true
 
 # Partitions
-BOARD_FLASH_BLOCK_SIZE := 1024
+BOARD_FLASH_BLOCK_SIZE := 131072
+#BOARD_FLASH_BLOCK_SIZE := 1024
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2411724800
@@ -48,14 +48,21 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril/
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi/
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 DEVICE_RESOLUTION := 1280x800
+#LZMA := true
+#ifndef LZMA
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
+#else
+#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+#endif
 
 #TWRP
-TW_MATISSEWIFI := true
+
+#RECOVERY_VARIANT := twrp
+#TW_MATISSEWIFI := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 126
 TW_IGNORE_MAJOR_AXIS_0 := true
@@ -64,7 +71,7 @@ TW_NO_USB_STORAGE := true
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_USE_TOOLBOX := true
-TW_EXCLUDE_SUPERSU := true
+#TW_EXCLUDE_SUPERSU := true
 TWHAVE_SELINUX := true
 #TW_INCLUDE_L_CRYPTO := true
 
@@ -95,7 +102,6 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
-
 
 # inherit from the proprietary version
 -include vendor/samsung/matissewifi/BoardConfigVendor.mk

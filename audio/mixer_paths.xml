@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <mixer>
-	<!-- SM-T231_EUR_XX (Millet) ======================================= -->
+	<!-- SM-T530_EUR_XX (matissewifi sub77) ======================================= -->
 	<!-- These are the initial mixer settings -->
 	<!-- reset RX part -->
 	<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="0" />
@@ -290,7 +290,7 @@
 		<ctl name="RX3 Digital Volume" value="78" />
 	</path>
 
-	<path name="headphones">
+	<path name="headset">
 		<path name="ear" />
 		<ctl name="HPHL Volume" value="20" />
 		<ctl name="HPHR Volume" value="20" />
@@ -350,14 +350,20 @@
 
 	<!-- ================================================================ -->
 	<!-- Recording Scenario	-->
-	<path name="speaker-mic">
+	<path name="rec-main-mic">
 		<ctl name="Main Mic Delay" value="4" />
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="23" />
+		<ctl name="ADC1 Volume" value="28" />
 		<ctl name="DEC1 Volume" value="84" />
 	</path>
 
-	<path name="headset-mic">
+	<path name="rec-sub-mic">
+		<path name="sub-mic" />
+		<ctl name="ADC3 Volume" value="19" />
+		<ctl name="DEC1 Volume" value="84" />
+	</path>
+
+	<path name="rec-headset-mic">
 		<path name="ear-mic" />
 		<ctl name="ADC2 Volume" value="13" />
 		<ctl name="DEC1 Volume" value="84" />
@@ -404,7 +410,7 @@
 
 	<!-- ================================================================ -->
 	<!-- recognition Scenario -->
-	<path name="voice-rec-mic">
+	<path name="vr-main-mic">
 		<path name="main-mic" />
 		<ctl name="ADC1 Volume" value="19" />
 		<ctl name="DEC1 Volume" value="90" />
@@ -542,7 +548,7 @@
 	</path>
 
 	<!-- TX part -->
-	<path name="handset-mic">
+	<path name="voice-call-main-mic">
 		<path name="main-mic" />
 		<ctl name="ADC1 Volume" value="19" />
 		<ctl name="DEC1 Volume" value="84" />
