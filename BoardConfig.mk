@@ -54,9 +54,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 DEVICE_RESOLUTION := 1280x800
 #LZMA := true
 #ifndef LZMA
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
+#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
 #else
-#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 #endif
 
 #TWRP
