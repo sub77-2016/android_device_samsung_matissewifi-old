@@ -59,7 +59,7 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
 	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
 
 ifndef LZMA
-$(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
+$(INSTALLED_RECOVERYIMAGEX_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
 		$(recovery_uncompressed_ramdisk) \
 		$(recovery_ramdisk) \
 		$(recovery_kernel)
