@@ -23,12 +23,12 @@ TARGET_OTA_ASSERT_DEVICE := matissewifi,matisselte,matisse3g
 
 # Kernel
 #TARGET_PREBUILT_KERNEL := device/samsung/matissewifi/zImage
-TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
-TARGET_KERNEL_CONFIG := msm8226-full_matissewifi_defconfig
-TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/s3ve3g
+TARGET_KERNEL_CONFIG := twrp-matissewifi_defconfig
+T#ARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-#CONFIG_CROSS_COMPILE3 := /home/sub77/Android/toolchains/sabermod/SaberNaro-arm-eabi-4.1/bin/arm-eabi-
+TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -52,17 +52,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
 # Recovery
 DEVICE_RESOLUTION := 1280x800
-#LZMA := true
-#ifndef LZMA
-#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/multirom/twrp.fstab
-#else
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
-#endif
 
 #TWRP
-
-#RECOVERY_VARIANT := twrp
-#TW_MATISSEWIFI := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 126
 TW_IGNORE_MAJOR_AXIS_0 := true
@@ -74,6 +66,8 @@ TW_USE_TOOLBOX := true
 #TW_EXCLUDE_SUPERSU := true
 TWHAVE_SELINUX := true
 #TW_INCLUDE_L_CRYPTO := true
+
+PRODUCT_COPY_FILES := device/samsung/matissewifi/multirom/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # MultiROM config. MultiROM also uses parts of TWRP config
 #MR_INPUT_TYPE := type_b
